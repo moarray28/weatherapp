@@ -1,5 +1,5 @@
 Photon is web based platform for having  current and future weather reports.
-Website is made using React JS ,Tailwind CSS, Express .
+It is made using React JS(Vite) ,Tailwind CSS, Express .
 
 I have used WeatherAPI(https://www.weatherapi.com/) for JSON based data.
 
