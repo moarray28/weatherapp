@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer{
+  body{ 
+@apply  text-stone-100    
+  }
+}
+
+ *{
+  font-family: 'Outfit';
+  
+
+}
+
+
+@layer utilities {
+  body {
+  
+    background: linear-gradient(to right,#023140,#0b7598,#0e91bd);
+  
+  }
+
+}
+
+
+.rotates{animation:rotate-scale-up .9s linear both}
+
+
+ @keyframes rotate-scale-up{
+  0%{transform:scale(1) rotateZ(0)}
+  50%{
+    transform:scale(3) rotateZ(180deg);
+    color:white;
+  }
+  100%{transform:scale(1) rotateZ(360deg)}}
