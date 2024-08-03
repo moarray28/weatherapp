@@ -4,26 +4,8 @@ export default function Loading() {
     return (
 
         <> 
-      {/**   <div className="h-screen w-screen relative m-0 p-0 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-flow animate"></div>
-            <div className="flex items-center justify-center h-full w-full absolute inset-0 z-10">
-                <div className="text-white mr-14 font-bold">
-                    <p className="text-4xl mb-0">PHOTON</p>
-                    <br />
-                    <p className="text-md mt-0 ml-14">
-                        Powered by{" "}
-                        <a
-                            className="text-md "
-                            href="https://www.weatherapi.com/"
-                            title="Free Weather API"
-                        >
-                            WeatherAPI.com
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </div> */}
-
+     
+     
 <div className="h-screen w-screen relative m-0 p-0 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-flow animate"></div>
       <div className="flex items-center justify-center h-full w-full absolute inset-0 z-10">

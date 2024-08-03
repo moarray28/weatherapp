@@ -8,8 +8,7 @@ export default function Getdata() {
   const [errmessage, setErrmessage] = useState("");
   const [forecastData, setForecastData] = useState([]); // []
  
-   const apiKey = import.meta.env.VITE_API_KEY;
-
+    
  
    
 
@@ -21,65 +20,8 @@ export default function Getdata() {
   const [forecasttoggle,setForecasttoggle]=useState(false);
   
  
-  /*
-
-  useEffect(() => {
- 
   
-    const fetchWeather = async () => {
-    
-      let url;
-
-      if (location) {
-        url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}
-&q=${location}`;
-      } else {
-        url = `https://api.weatherapi.com/v1/forecast.json?key=
-   ${apiKey}&q=Vasai+&days=6`;
-      }
-
-      
-
-      try {
-
-
-
-        const responseForecast = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}+&days=6`);
-        const dataForecast = await responseForecast.json();
-        setForecastData(dataForecast.forecast.forecastday);
-
-        const response = await fetch(url);
-        setErrmessage("");
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await response.json();
-
-        // Check if data contains valid location information
-        if (data.error && data.error.code === 1006) {
-          // No matching location found, set default location
-
-          setWeatherData(null); // Clear previous weather data
-          setLocation("Vasai"); // Set default location
-        } else {
-          // Valid data received, set weatherData state
-          setWeatherData(data);
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setErrmessage("Location not found .Try searching something similar");
-      }
-    };
-
-    if (location) {
-      fetchWeather();
-    }
-  }, [location]);
-   */
-
-
-  //server side coding 
-
+  
     useEffect(() => {
       const fetchWeather = async () => {
         let url;
@@ -172,14 +114,6 @@ export default function Getdata() {
            
            
 
-{/** 
-           
-           <div
-           className="flex flex-row  space-x-6 p-3 w-2/5">
-              <div className="float-right">{weatherData.forecast.forecastday[0].astro.sunrise}</div>
-              <div className="float-left">{weatherData.forecast.forecastday[0].astro.sunset}</div>
-           </div>
-            */}
 
 
 

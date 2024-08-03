@@ -7,8 +7,10 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 // Enable CORS
-app.use(cors());
 app.use(express.json());
+app.use(cors({
+    origin: '*', // Adjust based on your security needs
+  }));
 
 app.get('/weather', async (req, res) => {
     const { location } = req.query;
