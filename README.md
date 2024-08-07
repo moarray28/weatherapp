@@ -1,7 +1,7 @@
 ## Photon - Weather Forecast App 
 Photon is web based platform for having  current and future weather reports.
 
-### Tech Used : React JS, Tailwind CSS, Express JS
+#### Tech Used : React JS, Tailwind CSS, Express JS
 
 I have used WeatherAPI(https://www.weatherapi.com/) for JSON based data.
 
