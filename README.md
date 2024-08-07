@@ -1,3 +1,4 @@
+## Photon - Weather Forecast App 
 Photon is web based platform for having  current and future weather reports.
 It is made using React JS(Vite) ,Tailwind CSS, Express .
 
