@@ -27,6 +27,10 @@ export default function Getdata() {
     useEffect(() => {
       const fetchWeather = async () => {
         let url;
+
+        if (!apiKey) {
+          console.error('API URL is not defined');
+        }
     
         if (location) {
             url = `${apiKey}/weather?location=${location}`;
