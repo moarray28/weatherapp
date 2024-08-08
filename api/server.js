@@ -8,10 +8,14 @@ const port = process.env.PORT || 5000;
 
 // Enable CORS
 app.use(express.json());
-app.use(cors({
-    origin: '*', // Adjust based on your security needs
-  }));
 
+const corsOptions = {
+    origin: 'https://weatherapp-p90b5qjki-moarray28s-projects.vercel.app/', // Replace with your frontend URL
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
+  };
+  
+  app.use(cors(corsOptions));
 app.get('/weather', async (req, res) => {
     const { location } = req.query;
     const apiKey = process.env.VITE_API_KEY;

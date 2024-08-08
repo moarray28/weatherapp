@@ -7,7 +7,9 @@ export default function Getdata() {
   const [location, setLocation] = useState("Vasai");
   const [errmessage, setErrmessage] = useState("");
   const [forecastData, setForecastData] = useState([]); // []
- 
+
+
+ const  apiKey = import.meta.env.VITE_API_URL;
     
  
    
@@ -27,9 +29,9 @@ export default function Getdata() {
         let url;
     
         if (location) {
-            url = `http://localhost:5000/weather?location=${location}`;
+            url = `${apiKey}/weather?location=${location}`;
         } else {
-            url = `http://localhost:5000/weather`;
+            url = `${apiKey}/weather`;
         }
     
         try {
