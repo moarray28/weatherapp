@@ -10,16 +10,17 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 
 const corsOptions = {
-    origin: 'https://weatherapp-moarray28s-projects.vercel.app/', // Replace with your frontend URL
+    origin: 'https://weatherapp-moarray28s-projects.vercel.app', // Replace with your frontend URL
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type'],
   };
   
   app.use(cors(corsOptions));
+
 app.get('/weather', async (req, res) => {
     const { location } = req.query;
     const apiKey = process.env.VITE_API_KEY;
-
+console.log('API Key:', process.env.VITE_API_KEY);
     let url;
     if (location) {
         url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=6`;

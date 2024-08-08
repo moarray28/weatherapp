@@ -34,8 +34,10 @@ export default function Getdata() {
     
         if (location) {
             url = `${apiKey}/weather?location=${location}`;
+            console.log('Request URL:', url);
         } else {
             url = `${apiKey}/weather`;
+            console.log('Request URL:', url);
         }
     
         try {
