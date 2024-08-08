@@ -10,7 +10,7 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 
 const corsOptions = {
-    origin: 'https://weatherapp-moarray28s-projects.vercel.app', // Replace with your frontend URL
+    origin: 'https://weatherapp-delta-kohl.vercel.app', // Replace with your frontend URL
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type'],
   };
