@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { debounce, set } from "lodash";
 import Toggles from "./Toggles";
 
+
 export default function Getdata() {
   const [weatherData, setWeatherData] = useState(null);
   const [location, setLocation] = useState("Vasai");
@@ -9,7 +10,7 @@ export default function Getdata() {
   const [forecastData, setForecastData] = useState([]); // []
 
 
- const  apiKey = import.meta.env.VITE_API_URL;
+  const  apiKey = import.meta.env.VITE_API_URL;
     
  
    
@@ -21,15 +22,14 @@ export default function Getdata() {
 
   const [forecasttoggle,setForecasttoggle]=useState(false);
   
- 
-  
-  
+
     useEffect(() => {
       const fetchWeather = async () => {
         let url;
 
+        console.log('this is apikey'+ apiKey);
         if (!apiKey) {
-          console.error('API URL is not defined');
+          console.error('API URL is not defined' + apiKey);
         }
     
         if (location) {
@@ -61,9 +61,13 @@ export default function Getdata() {
             setErrmessage('Location not found. Try searching something similar');
         }
     };
-       fetchWeather();
-      }, [location]);
-  
+    
+    
+       fetchWeather(); 
+      }, [location]); 
+
+      
+      
       
       
   const handleInputChange = (e) => {
@@ -107,11 +111,11 @@ export default function Getdata() {
             
           
 
-            <p className="text-lg sm:text-xl">
+            <p className="text-lg sm:text-xl font-semibold">
           
 
             <i className="fa-solid fa-location-dot"/>  
-           <span className="mx-1"></span> {weatherData.location.name}, {weatherData.location.region},{" "}
+           <span className="mx-1 "></span> {weatherData.location.name}, {weatherData.location.region},{" "}
               {weatherData.location.country}
             </p>
 
