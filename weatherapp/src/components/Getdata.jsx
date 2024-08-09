@@ -147,7 +147,7 @@ export default function Getdata() {
 
       {forecasttoggle ? (   <div className="m-6 p-4 rounded-2xl border-4 border-gray-500 bg-slate-950">
       {/* Horizontally scrollable container */} 
-      <p className="font-bold">6 Days Forecast</p>
+      <p className="font-bold">Days Forecast</p>
       <div className="relative w-[42vw] overflow-x-auto p-4 whitespace-nowrap">
         <div className="flex space-x-6 min-w-max">
           {forecastData.map((dayData, index) => (

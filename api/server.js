@@ -5,10 +5,10 @@ require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 5000; // Default to 5000 if PORT is not set
-
+const frontendurl = process.env.VITE_FRONTEND_URL;
 // Enable CORS with explicit configuration
 app.use(cors({
-    origin: "http://localhost:5173", // Your frontend URL
+    origin: frontendurl, // Your frontend URL
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
@@ -26,9 +26,9 @@ app.get('/weather', async (req, res) => {
 
     let url;
     if (location) {
-        url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=6`;
+        url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=7`;
     } else {
-        url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=Vasai&days=6`;
+        url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=Vasai&days=7`;
     }
 
     try {
