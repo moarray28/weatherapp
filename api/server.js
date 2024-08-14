@@ -9,8 +9,7 @@ const frontendurl = process.env.VITE_FRONTEND_URL;
 // Enable CORS with explicit configuration
 app.use(cors({
     origin: frontendurl, // Your frontend URL
-    methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    credentials:true
 }));
 
 app.use(express.json());
@@ -19,16 +18,16 @@ app.use(express.json());
 app.get('/weather', async (req, res) => {
     const { location } = req.query;
     const apiKey = process.env.VITE_API_KEY;
-
+    const number=6;
     if (!apiKey) {
         return res.status(500).json({ error: 'API key is missing' });
     }
 
     let url;
     if (location) {
-        url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=7`;
+        url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=${number}`;
     } else {
-        url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=Vasai&days=7`;
+        url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=Vasai&days=${number}`;
     }
 
     try {
